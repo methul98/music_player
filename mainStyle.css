@@ -1,0 +1,757 @@
+body{
+    background-color:#0c1027;    ; 
+    color: white;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+}
+body::-webkit-scrollbar{
+    display: none;
+} 
+/* -------------------------------------------------------------------------------------------------------/ */
+a{
+    text-decoration: none;
+    color:black;
+}
+#section
+{
+    display: inline-block;
+    width: 70%;
+    height: 86vh;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+#section::-webkit-scrollbar {
+	display: none;
+}
+/* ------------------------------------------------------------------------------------------------------------- */
+/*styling for player name*/ 
+#player-name h3{
+   margin-top:10px;
+   margin-bottom: 0;
+}
+#player-name h2{
+  margin: 0;
+}
+/* logo image  */
+.logo img{
+    width: 60px;
+    height: 60px;
+}
+#logo-And-name {
+    display: flex;
+    flex-direction: row;
+}
+/* navigation bar style */
+#header {
+   display: flex;
+   flex-direction:row;
+   justify-content: space-between;
+   margin:0 4%;
+}
+/* favourites */
+#fav{
+     margin-right: 30%;
+     margin-left: 5%;
+     margin-top: 0px;
+}
+/* this favourite icon became visible instead of favourite text while reducing the screen size */
+.favourite-icon{
+    display: none;
+    position: relative;
+    margin-top: 2%;
+    cursor: pointer;
+}
+.favourite-icon i{
+  font-size: x-large;
+}
+/* search bar of the navigation bar */
+.search-bar{
+    position: relative;
+    width: 25%;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.search-bar div{
+   display: inline-block;
+   margin-top: 20px; 
+}
+.search-bar input{
+   height: 25px;
+   width: 100%; 
+   border-radius: 1rem;
+   text-align: center;
+   background-color:inherit;
+   color: white;
+}
+/* search bar search icon styling */
+.search-bar #search-icon{
+    position: absolute;
+    left: 4%;
+    color: gray;
+    margin-top: 6px;
+}
+/* search bar mic icon styling */
+.search-bar #mic-icon{
+    position: absolute;
+    color: gray;
+    right:3%; 
+    margin-top: -22px;
+}
+/* removed the focus of input while clicking on it */
+input:focus{
+    outline: none;
+}
+/* notification icon styling */
+#notification{
+    margin-top: 15px;
+    position: relative;
+    margin-right: 10ox;
+}
+#notification i{
+    font-size: x-large;
+}
+/* animation for notification icon */
+@keyframes ringing_bell {
+    0% {
+		transform: rotate(-10deg);
+	}
+	50% {
+		transform: rotate(10deg);
+	}
+	100% {
+		transform: rotate(-10deg);
+	}
+}
+#notification{
+    animation-name: ringing_bell;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+    animation-delay: 10s;
+	position: first;
+}
+/* redcolor dot on notification icon */
+#notification i::after{
+    content: " ";
+    width: 6px;
+    height: 6px;
+    background-color: red;
+    display: inline-block;
+    border-radius: 50%;
+    position: absolute;
+    right:-1%;
+}
+/* user Image styling */
+#user-image img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+/* Nav-bar styles end here */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* main-start here */
+#main{
+    margin-top: 2%;
+    margin-left: 5%;
+}
+/* outer home screen carousel styling */
+#outer-carousel{
+    position: relative;
+    margin:5% 10%; 
+    width: 70%;
+}
+/*home screen carousel styling  */
+#carousel {
+    display: flex;
+    overflow:visible; 
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    left: 5%;
+    width:100%;
+    height: auto;
+}
+/* carousel img common styling */
+#carousel img{
+    height: 15vw;
+	width: 22.5vw;
+    transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
+}
+/* instead of using separte id i styled them using child attribute */
+/* first image of carousel */
+#carousel img:nth-child(1){
+    position: relative;
+    left: 5%;
+    z-index: 2;
+}
+/* second image of carousel */
+#carousel img:nth-child(2){
+    z-index: 3;
+}
+/* third image of carousel */
+#carousel img:nth-child(3){
+    position: relative;
+    right: 5%;
+    z-index: 1;
+}
+/* adding shaddow for carousel imge on hover */
+#carousel img:hover {
+	z-index: 4;
+	box-shadow: 0px 0px 12px 0.1px black;
+	height: 18vw;
+	width: 27vw;
+}
+/* --------------------------------------------------------------------------------------- */
+/* Latest release */
+#latest-section{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-column-gap: 30px;   */
+    grid-gap: 30px;
+}
+/* latest release content styling */
+#latest-release{
+    position: relative;
+    width: 100%;
+    top:20vw;
+}
+.song-img img{
+   width:120px;
+   height:120px;
+}
+.latest-release-content
+{
+    display: flex;
+     margin-top: 2%; 
+    flex-direction: row;
+}
+.details {
+    margin-bottom: 2px;
+    margin-left: 2%;
+    width:40%;
+}
+.latest-release-content h4{
+    margin-bottom: 5px;
+}
+.latest-release-content div{
+    margin-right: 2%;
+}
+.song-img{
+    position: relative;
+    cursor: pointer;
+}
+/* play button for latest release content */
+.play-button{
+  display: none;
+  position: absolute;
+  top:35%;
+  left: 35%;
+  z-index: 999999;
+}
+.play-button,.pause-button i{
+   font-size:xx-large;
+}
+.pause-button{
+    position: absolute;
+    display:none;
+    top:35%;
+    left: 35%;
+}
+/* latest release song image cover effect */
+.song-img:hover{
+    box-shadow: 6px 6px 10px 10px inherit;
+    transform: translateX(-10px);
+}
+.song-img:hover  .play-button{
+    display:block;
+}
+.play-button:focus + .pause-button{
+    display: block;
+}
+
+.fa-ellipsis-h {
+	cursor: pointer;
+}
+/* this  is for the latest release drop down */
+input[type="checkbox"] {
+    
+	  display: none;
+}
+/* option of latest release */
+.option{
+     position: relative; 
+     text-align: center; 
+	
+}
+/* latest release dropdown styling */
+.latest-release-topdownlist
+{
+    background-color: blanchedalmond;
+    color: black;
+    position: absolute;
+    display: none;
+    width: 150px;
+    height:150px; 
+    top: 20px;
+	right: 0px;
+    cursor: pointer;
+}
+.latest-release-topdownlist p{
+   text-align: centre;  
+   display: inline;
+   margin-right: 5px; 
+}
+.latest-release-topdownlist div
+{
+   display: inline;
+}
+/* when we click that icon the drop down list will be shown */
+input[type="checkbox"]:checked ~ .latest-release-topdownlist {
+	display: block;
+	opacity: 1;
+	padding: 5px;
+}
+/* ---------------------------------------------------------------------------------------------------------------- */
+/* popular Artist section */
+#popular-artist
+{
+    position: relative;
+    top:22vw;
+}
+/* popular artist content styling */
+.popular-artist-content
+{
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.popular-artist-content a{
+    color: white;
+}
+.popular-artist-content a >div img
+{
+    width:120px;
+    height:120px;
+    border-radius: 50%;
+}
+.popular-artist-content a >div{
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+.popular-artist-content a >div .popular-play{
+    display: none;
+    position: absolute;
+    top:25%;
+    left: 40%;
+}
+.popular-play i{
+    font-size: 2rem;
+}
+/* on hover the brightnes of play button will be decrease */
+.popular-artist-content  a div div:hover {
+	opacity: 0.5;
+}
+/* while mouse hover the popular artist div the play button will be visible  */
+.popular-artist-content a div:hover  .popular-play{
+    display:block;
+}
+/* --------------------------------------------------------------------------------------------------- */
+/* music-theme section */
+#music-theme{
+    position: relative;
+    top:24vw;
+    background-color:#101642; 
+    /* background-color: #1b2243; */
+    box-shadow:6px 6px 10px 10px gray; 
+    height:auto; 
+    width: 100%;
+    display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+/* styling for station  */
+.stations {
+	margin-top: 7%;
+	 margin-left: 10px;
+     width: 15%;
+}
+/* outer most div of station */
+#div1{
+    position: relative;
+    width:9vw;
+    height: 6vw;
+    background-color:#f9d64c;
+}
+/* outer div of station */
+#div2{
+    position: relative;
+    left:5%;
+    top:-10%;
+    width:8vw;
+    height: 7vw;
+    background-color:#f0bc10;
+}
+/* inner div of station */
+#div3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left:9.5%;
+    top: -8%;
+    width: 6.5vw;
+    height: 8vw;
+    background-color: #ff4f0a;
+}
+/* logo styling on station */
+#div3 img {
+	width: 4vw;
+	height: 4vw;
+}
+#div3 p {
+	font-size: 1vw;
+}
+/* music theme content styling */
+#music-theme-main 
+{
+    margin-top:6%;
+    display: flex;
+    height: auto;
+    width: 85%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.theme-content img{
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+.theme-content:hover img{
+    opacity: 1;
+}
+/* theme contemt styling */
+.theme-content  p{
+   text-align:center;
+   position: relative;
+   top:-50%;
+   font-size: 1.5vw;
+   font-weight: 500;
+}
+/* --------------------------------------------------------------------------------------------------------- */
+/* music theme 2 */
+.music-theme-section2{
+    position: relative;
+    width: 100%;
+    top:27vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.outer-themediv {
+	width: 32%;
+	height: 13vw;
+	overflow: hidden;
+	min-width: 123px;
+	min-height: 82px;
+	margin-right: 1%;
+	cursor: pointer;
+}
+/* inner div portion */
+.inner-themediv {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	transition: all ease-in-out 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner-themediv span
+{
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+/* music theme section images i added as backgrounf image for get required function which is shown in the demo video */
+.music-theme-section2 .outer-themediv:nth-child(1) .inner-themediv {
+	background-image: url("music theme2/party.jpg");
+}
+.music-theme-section2 .outer-themediv:nth-child(2) .inner-themediv {
+	background-image: url("music theme2/electronic.jpg");
+}
+.music-theme-section2 .outer-themediv:nth-child(3) .inner-themediv {
+	background-image: url("music theme2/road-trip.jpg");
+}
+.outer-themediv:hover .inner-themediv {
+	transform: scale(1.3);
+}
+.outer-themediv:hover .inner-themediv span {
+	transform: scale(0.8);
+}
+/* -------------------------------------------------------------------------------------------------------- */
+/* Latest English section */
+.latest-english{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top:28vw;
+}
+/* latest languge section styling */
+/* this styling common for both english and tamil song */
+.latest-languge-content{
+    display: grid;
+    grid-template-columns:repeat(6,1fr);
+}
+.latest-languge-content div img{
+    width: 10vw;
+	min-width: 60px;
+	height: 10vw;
+	min-height: 60px;
+	transition: box-shadow ease-in-out 0.1s;
+}
+.latest-languge-content div img:hover {
+	box-shadow: 0px 0px 6px 1px gray;
+}
+.latest-languge-content p:nth-child(2n) {
+	width: 100%;
+	word-wrap: break-word;
+}
+.latest-languge-content div p:nth-child(2n + 1) {
+	font-size: 12px;
+	font-weight: lighter;
+}
+/* ---------------------------------------------------------------------------------------------------------------- */
+/* Latest tamil section */
+.latest-tamil
+{
+    position:relative;
+    width:100%;
+    height: auto;
+    top:28vw;
+}
+/* ------------------------------------------------------------------------------------------------------------------- */
+/* Aside section 2 */
+/* this label appear when we reduce the screen size */
+label[for="more"] {
+	display: none;
+	position: absolute;
+	right: 0%;
+	top: 15%;
+	padding-bottom: 5px;
+	z-index: 4;
+	width: 40px;
+	font-size: 20px;
+	height: 25px;
+	text-align: center;
+	box-shadow: 0px 0px 2px 1px white;
+	background-image: linear-gradient(45deg,#4e2ab8 20% ,#a841d6 80%);
+}
+/* this is the aside section of main part */
+#aside-part{
+    width: 27%;
+    position: relative;
+    top:3vw;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 2%;
+}
+#aside-header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#left-side p{
+    font-size: 1.5vw;
+    margin-top: 5px;
+    font-weight: 700;
+}
+#right-side{
+    position: relative;
+    font-size: 1vw;
+    color: green;
+}
+.queue{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.queue-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+}
+.queue-right i{
+    position: relative;
+    top:30%; 
+    color: green;
+    font-size: 1vw; 
+    cursor: pointer;
+}
+/* aside part queue option styling */
+.queue-option{
+    position: absolute;
+    top:6%;
+    display: none;
+    right: 0%;
+    background-color: ivory;
+    width: 150px;
+    height: 100px;
+    cursor: pointer;
+}
+.queue-option div p{
+    text-align: center;
+    margin-bottom:2%;
+}
+.queue input[type="checkbox"]:checked ~ .queue-option{
+	display:block;
+	opacity: 1;
+}
+/* ------------------------------------------------- */
+/* aside part content */
+.aside-content{
+    display: flex;
+    width: 100%;
+    height: 76vh;
+    overflow: scroll;
+    flex-direction: column;
+    cursor: pointer;
+}
+.aside-content::-webkit-scrollbar {
+	display: none;
+}
+.aside-content-part
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 7%;
+    margin-bottom: 5%;
+}
+.image-and-details div img{
+     width: 80px;
+     height: 80px; 
+}
+.image-and-details div p{
+    margin: 0;
+}
+.image-and-details div i{
+    position: absolute;
+    display: none;
+    top:65%;
+    left: 15%;
+}
+.image-and-details div p:nth-child(1) {
+    font-size: 1vw;
+    font-weight: 500;
+}
+.image-and-details div p:nth-child(2) {
+    font-size: 0.8vw;
+}
+.image-and-details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%; 
+}
+.image-and-details div{
+    margin-right: 3%;
+}
+/* while hovering the heart icon it color became red */
+.heart-font i:hover{
+    color: red;
+}
+/* ------------------------------------------------------------------------------------------------------------ */
+/* foooter part */
+.footer{
+    position:sticky;
+	width: 100%;
+    height: 70px;
+    background-color: #282828;
+    bottom: 0;
+}
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+/* footer part left side area styling */
+.footer-song-description{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 18%;
+    /* align-items: center; */
+}
+.footer-song-description .song-image img{
+    width: 50px;
+    height: 50px;
+}
+.song-artist-name p{
+    margin:0;
+   
+}
+.footer-song-description div{
+    margin-top: 3%; 
+}
+.footer-song-description .song-artist-name p:nth-child(1)
+{
+    font-size: 1.2vw;
+}
+.footer-song-description .song-artist-name p:nth-child(2)
+{
+    font-size: 0.8vw;
+}
+/* footer part controls part which is in middle of footer */
+.footer-song-control{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls{
+    width: 40%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 20px;
+}
+/* volumn and song duration slider */
+.song-slider{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+}
+.slider {
+	width: 100%;
+}
+.time{
+    margin: 0px 10px;
+}
+/* foooter part right most corner */
+.footer-song-third-part{
+    width: 20%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}

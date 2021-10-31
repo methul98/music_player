@@ -1,0 +1,212 @@
+@media screen and (max-width:1200px) {
+
+    .popular-artist-content{
+        justify-content: space-around;
+    }
+     /* make it margin right to zero for perfect view of the nav bar*/
+    #fav {
+       margin-right: 0%;
+	}
+	.search-bar {
+		width: 30%;
+	}
+	input {
+		font-size: 11px !important;
+    }
+    /* resize the song details box */
+    .box-img-details-head div p:nth-child(1)
+   {
+     font-size: 3vw;
+     font-weight: 700;
+   }
+   .box-img-details-head div p:nth-child(2)
+   {
+     font-size:1.8vw;
+     opacity: 0.5;
+   }
+   .box-img-details-para p
+   {
+       font-size: 1.3vw;
+   }
+   .song-details-box-img-details
+   {
+       margin: 1% 2%;
+   }
+   .buttons > button:nth-child(1){
+      margin-top: 2%;
+   }
+}
+
+@media screen and (max-width:950px){
+     /* this is for hide aside section and show the lable with rigth arrow  */
+    /* when we click on the right arraow the aside part will appear */
+    label[for="more"] {
+		display: block;
+	}
+    /* increase the aside section 1 width */
+    .aside-section-1{
+        width: 100%;
+    }
+    .aside-section2
+    {
+        visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		width: 300px;
+		height: 66vh;
+		background-color: #050043;
+		box-shadow: 0px 0px 2px 1px white;
+		right: 0px;
+		top: 20%;
+		z-index: 5;
+		overflow: scroll;
+		padding-left:10px;
+		transition: visibility ease-in-out 0.2s;
+		transition: opacity ease-in-out 0.2s;
+        margin-left: 2%;
+    }
+    input[id="more"]:checked ~  .aside-section2 {
+		visibility: visible;
+		opacity: 1;
+	}
+    .aside-section2::-webkit-scrollbar{
+        display: none;
+  }
+
+  /* resize the song list item */
+  .left-list-item
+  {
+      display: flex;
+      justify-content: space-between;
+      /* width: 50%; */
+  }
+  .left-list-item div:nth-child(3) p{
+      font-size: 10px;
+  }
+  .similar-artist-head div:nth-child(1)
+  {
+      font-size: 25px;
+  }
+  /* resize the similiar artist section */
+  .similar-artist-head div:nth-child(2)
+  {
+     font-size: 15px;
+  }
+  .similar-artist-item div p:nth-child(1)
+  {
+     font-size: 15px;
+  }
+  .similar-artist-content-left div p:nth-child(2)
+  {
+     font-size: 10px;
+  }
+  .image-and-details div p:nth-child(1) {
+      font-size: 15px;
+  }
+  .image-and-details div p:nth-child(2) {
+    font-size: 10px;
+  }
+
+  /* resize the song details box control part for better view  */
+  .buttons > button{
+      height: 4vw;
+      font-size: 2vw;
+      width: 15vw;
+  }
+  .follow-btn-below
+  {
+      font-size: 1.5vw;
+  }
+}
+
+@media screen and (max-width:750px)
+{
+    /* in this screen size the favourite text will hidded and favourite icon will be showen  */
+    #fav{
+        display: none;
+    }
+    .favourite-icon{
+        display: block;
+    }
+     /* I remove song image from footer part for better view */
+    .footer-song-description .song-image img{
+        display: none;
+    }
+     /* increse the vw of song name */
+    .footer-song-description .song-artist-name p:nth-child(1)
+    {
+        font-size: 1.8vw;
+    }
+    .footer-song-description .song-artist-name p:nth-child(2)
+    {
+       font-size: 1.2vw;
+    }
+    /* incresed the width of left part of the song list item */
+    .left-list-item
+    {
+        width: 50%;
+    }
+    .song-details-box
+    {
+       height:35vw;
+    }
+    /* increase the text size in the song details box */
+    .box-img-details-para p
+    {
+        font-size: 2vw;
+        line-height: 1rem;
+    }
+    .box-img-details-head div p:nth-child(1)
+    {
+     font-size: 4vw;
+    }
+}
+
+@media screen and (max-width:588px) {
+     /* i remove sound icon and slider from footer section for get enough space while reduce the screen size */
+    .footer-song-third-part > div:nth-child(3){
+        display: none;
+    }
+    .footer-song-third-part > div:nth-child(4){
+        display: none;
+    }
+    /* resize the foooter section content */
+    .footer-song-description{
+        width:22%;
+    }
+    .footer-song-third-part{
+        width: 10%;
+    }
+    .footer-song-control{
+        width:60%;
+    }
+    .controls{
+        width: 50%;
+    }
+    /* i reduce the music player name */
+    #player-name h3{
+        font-size: 2vw;
+    }
+    #player-name h2{
+        font-size: 3vw;
+    }
+    /* increase the song details box height */
+    .song-details-box{
+        height: 55vw;
+    }
+    /* increase the size of the text and button of the song details box part */
+    .box-img-details-para p
+    {
+        font-size: 3vw;
+        line-height: 1.2rem;
+    }
+    .buttons > button{
+        height: 5vw;
+        font-size: 3vw;
+        width: 20vw;
+    }
+    .follow-btn-below
+    {
+        font-size: 1.8vw;
+    }
+}
